@@ -1,12 +1,12 @@
 if node["php"]["version"]
   node.override["php"]["version"] = node["php"]["version"]
   node.override["php"]["configure_options"]["mysql"] = false
-  require_recipe "php::source"
+  include_recipe "php::source"
 else
- require_recipe "php"
+ include_recipe "php"
 end
 
-require_recipe "apache2::mod_php5"
+include_recipe "apache2::mod_php5"
 
 pkgs = [
   "php5-gd",

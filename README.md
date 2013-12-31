@@ -155,6 +155,10 @@ config.json description
 config.json is the main configuration file. Data from config.json is used to
 configure virtual machine. After editing file make sure that your JSON syntax is
 valid. http://jsonlint.com/ can help to check it.
+  
+  * hostname (string, required)
+    URL of the machine automatically added to the /etc/hosts if you have vagrant 
+    host updater plugin (vagrant plugin install vagrant-hostsupdater)
 
   * ip (string, required)
     Static IP address of virtual machine. It is up to the users to make sure

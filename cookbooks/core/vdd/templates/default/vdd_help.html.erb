@@ -15,7 +15,7 @@
   <body>
 
   <h1>Welcome to VDD!</h1>
-  <p>Hello, developer! On this page you can find links to your configured sites and development tools. Also there is a list of frequantly asked quistions.</p>
+  <p>Hello, developer! On this page you can find links to your configured sites and development tools. Also there is a list of frequently asked questions.</p>
 
   <ul>
     <li><a href="#sites">Configured Sites</a></li>
@@ -54,13 +54,12 @@
   </ol>
 
   <h5 id="q2">How to quickly install Drupal?</h5>
-  <p>For this example we'll setup Drupal 7 on previously configured VDD site <em>test_site</em>.
-    Make sure that <em>test_site</em> is included in <em>sites</em> section in config.json.
+  <p>For this example we'll setup Drupal 7 on previously configured VDD site <em>drupal7</em>.
+    Make sure that <em>drupal7</em> is included in <em>sites</em> section in config.json.
     Enter virtual machine by SSH. Open terminal and write next commands:</p>
   <ol class="code">
-    <li>$ cd ~/sites &amp;&amp; rm -rf <em>test_site</em></li>
-    <li>$ drush dl drupal-7 --drupal-project-rename="<em>test_site</em>"</li>
-    <li>$ drush @<em>test_site</em> si standard</li>
+    <li>$ drush dl drupal-7 --drupal-project-rename="<em>drupal7</em>"</li>
+    <li>$ drush @<em>drupal7</em> si standard</li>
   </ol>
 
   </body>

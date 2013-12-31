@@ -4,9 +4,18 @@ Vagrant.configure("2") do |config|
   vdd_config_path = File.expand_path(File.dirname(__FILE__)) + "/config.json"
   vdd_config = JSON.parse(File.read(vdd_config_path))
 
+  # Forward Agent
+  #
+  # Enable agent forwarding on vagrant ssh commands. This allows you to use identities
+  # established on the host machine inside the guest. See the manual for ssh-add
+  config.ssh.forward_agent = true
+
   # Base box
   config.vm.box = "precise32"
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+
+  # Machine hostname
+  config.vm.hostname = vdd_config["hostname"]
 
   # Networking
   config.vm.network :private_network, ip: vdd_config["ip"]

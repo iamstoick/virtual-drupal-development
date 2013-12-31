@@ -4,12 +4,12 @@ if node["sites"]
     include_recipe "database::mysql"
 
     htdocs = "/var/www/#{index}"
-    directory htdocs do
-      owner "vagrant"
-      group "vagrant"
-      mode "0755"
-      action :create
-    end
+    # directory htdocs do
+    #   owner "vagrant"
+    #   group "vagrant"
+    #   mode "0755"
+    #   action :create
+    # end
 
     mysql_connection_info = {
       :host => "localhost",

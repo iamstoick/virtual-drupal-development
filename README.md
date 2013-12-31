@@ -65,10 +65,9 @@ your environment.
      Download and unpack VDD source code and place it inside your home
      directory.
 
-  5. Adjust configuration (optional)
+  5. Adjust configuration | Copy config.example.json to config.json
      You can edit config.json file to adjust your settings. If you use VDD first
-     time it's recommended to leave config.json as is. Sample config.json is
-     just fine.
+     time it's recommended to leave the original config as is.
 
   6. Build your environment
      To build your environment execute next command inside your VDD copy:
@@ -80,11 +79,7 @@ your environment.
   7. Visit 192.168.44.44 address
      If you didn't change default IP address in config.json file you'll see
      VDD's main page. Main page has links to configured sites, development tools
-     and list of frequently asked questions.
-
-  8. SSH into your virtual machine
-     Run next command inside your VDD copy's directory:
-     $ vagrant ssh
+     and list of frequently asked questions. Follow instruction on how to quickly install Drupal
 
 Now you have ready to use virtual development server. By default 2 sites
 (similar to virtual hosts) are configured: Drupal 7 and Drupal 8. You always can

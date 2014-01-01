@@ -81,6 +81,9 @@ your environment.
      VDD's main page. Main page has links to configured sites, development tools
      and list of frequently asked questions. Follow instruction on how to quickly install Drupal
 
+  8. Configure Drupal Code sniffer with Coder module inside bin directory 
+     Reference : https://drupal.org/node/1419988
+
 Now you have ready to use virtual development server. By default 2 sites
 (similar to virtual hosts) are configured: Drupal 7 and Drupal 8. You always can
 add new ones in config.json file.

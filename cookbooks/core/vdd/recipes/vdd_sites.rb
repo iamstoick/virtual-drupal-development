@@ -18,6 +18,8 @@ if node["sites"]
     execute "import" do
       command "mysql -u root -p\"#{node['mysql']['server_root_password']}\" #{index} < /var/www/#{index}/database/vagrant.sql"
       action :run
+      # Do not run if the database already exists
+      not_if "mysql -uroot -p\"#{node['mysql']['server_root_password']}\" -e'show databases' | grep #{index}"
     end
 
   end

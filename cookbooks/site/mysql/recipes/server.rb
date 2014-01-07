@@ -163,11 +163,11 @@ end
 
 # set the root password for situations that don't support pre-seeding.
 # (eg. platforms other than debian/ubuntu & drop-in mysql replacements)
-execute "assign-root-password" do
-  command "\"#{node['mysql']['mysqladmin_bin']}\" -u root password \"#{node['mysql']['server_root_password']}\""
-  action :run
-  only_if "\"#{node['mysql']['mysql_bin']}\" -u root -e 'show databases;'"
-end
+# execute "assign-root-password" do
+#   command "\"#{node['mysql']['mysqladmin_bin']}\" -u root password \"#{node['mysql']['server_root_password']}\""
+#   action :run
+#   only_if "\"#{node['mysql']['mysql_bin']}\" -u root -e 'show databases;'"
+# end
 
 unless platform_family?(%w{mac_os_x})
   grants_path = node['mysql']['grants_path']

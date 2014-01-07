@@ -49,10 +49,13 @@ your environment.
   1. Install VirtualBox
      https://www.virtualbox.org/wiki/Downloads
 
-  2. Install Vagrant
+  1. Install Vagrant
      http://docs.vagrantup.com/v2/installation/index.html
 
-  3. Prepare Vagrant box
+  1. Install vagrant host updater plugin
+     vagrant plugin install vagrant-hostsupdater
+
+  1. Prepare Vagrant box
      Boxes are the skeleton from which Vagrant machines are constructed.
      They are portable files which can be used by others on any platform that
      runs Vagrant to bring up a working environment.
@@ -61,27 +64,27 @@ your environment.
      $ vagrant box add precise32 http://files.vagrantup.com/precise32.box
 
 
-  4. Prepare VDD source code
+  1. Prepare VDD source code
      Download and unpack VDD source code and place it inside your home
      directory.
 
-  5. Adjust configuration | Copy config.example.json to config.json
+  1. Adjust configuration | Copy config.example.json to config.json
      You can edit config.json file to adjust your settings. If you use VDD first
      time it's recommended to leave the original config as is.
 
-  6. Build your environment
+  1. Build your environment
      To build your environment execute next command inside your VDD copy:
      $ vagrant up
 
      Vagrant will start to build your environment. You'll see green status
      messages while Chef is configuring the system.
 
-  7. Visit 192.168.44.44 address
+  1. Visit 192.168.44.44 address
      If you didn't change default IP address in config.json file you'll see
      VDD's main page. Main page has links to configured sites, development tools
      and list of frequently asked questions. Follow instruction on how to quickly install Drupal
 
-  8. Configure Drupal Code sniffer with Coder module inside bin directory 
+  1. Configure Drupal Code sniffer with Coder module inside bin directory 
      Reference : https://drupal.org/node/1419988
 
 Now you have ready to use virtual development server. By default 2 sites

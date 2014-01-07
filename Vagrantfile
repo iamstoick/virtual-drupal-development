@@ -29,6 +29,9 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder vdd_config["synced_folder"]["host_path"],
       vdd_config["synced_folder"]["guest_path"],
       :nfs => vdd_config["synced_folder"]["use_nfs"]
+
+    # This is for vassh and vasshin to work properly
+    config.vm.synced_folder "data/", "/var/www/"
   end
 
   # Customize provisioner

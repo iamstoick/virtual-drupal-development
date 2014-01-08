@@ -19,7 +19,7 @@ if node["sites"]
       command "mysql -u root -p\"#{node['mysql']['server_root_password']}\" #{index} < /var/www/#{index}/database/vagrant.sql"
       action :run
       # Do not run if the database already exists
-      not_if "mysql -uroot -p\"#{node['mysql']['server_root_password']}\" -e'show databases' | grep #{index}"
+      not_if "[ $(mysql -uroot -p\"#{node['mysql']['server_root_password']}\" -e\"SELECT COUNT(DISTINCT table_name) FROM information_schema.columns WHERE table_schema = '#{index}'\" | tail -1) != 0 ]"
     end
 
   end

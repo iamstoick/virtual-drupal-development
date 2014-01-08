@@ -3,7 +3,7 @@
   "ip": "192.168.44.44",
   "memory": "1024",
   "synced_folder": {
-    "host_path": "data/",
+    "host_path": "www/",
     "guest_path": "/var/www",
     "use_nfs": false
   },

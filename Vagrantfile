@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
       :nfs => vdd_config["synced_folder"]["use_nfs"]
 
     # This is for vassh and vasshin to work properly
-    config.vm.synced_folder "data/", "/var/www/"
+    config.vm.synced_folder "www/", "/var/www/"
 
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]

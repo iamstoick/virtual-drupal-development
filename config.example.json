@@ -19,7 +19,8 @@
       "account_pass": "root",
       "account_mail": "box@example.com",
       "site_name": "Drupal 7",
-      "site_mail": "box@example.com"
+      "site_mail": "box@example.com",
+      "files": "vdd/files"
     }
   },
   "git": {

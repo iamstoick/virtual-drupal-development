@@ -30,6 +30,14 @@ Vagrant.configure("2") do |config|
       vdd_config["synced_folder"]["guest_path"],
       :nfs => vdd_config["synced_folder"]["use_nfs"]
 
+    # Files folder
+    # Files folder
+    vdd_config["sites"].each do |index, site|
+      @host  = "#{vdd_config["synced_folder"]["host_path"]}/#{index}/#{site['files']}"
+      @guest = "#{vdd_config["synced_folder"]["guest_path"]}/#{index}/#{site['files']}"
+      config.vm.synced_folder @host, @guest, :owner => "www-data", :group => "vagrant"
+    end
+
     # This is for vassh and vasshin to work properly
     config.vm.synced_folder "www/", "/var/www/"
 

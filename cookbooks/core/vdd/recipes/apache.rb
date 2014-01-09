@@ -27,9 +27,3 @@ template "/etc/apache2/conf.d/vdd_apache.conf" do
   mode "0644"
   notifies :restart, "service[apache2]", :delayed
 end
-
-template "/etc/apache2/envvars" do
-  source "vdd_apache_envvars.erb"
-  mode "0644"
-  notifies :restart, "service[apache2]", :delayed
-end

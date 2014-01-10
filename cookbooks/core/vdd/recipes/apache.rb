@@ -18,6 +18,12 @@ group "vagrant" do
   append true
 end
 
+group "www-data" do
+  action :modify
+  members "vagrant"
+  append true
+end
+
 web_app "localhost" do
   template "localhost.conf.erb"
 end

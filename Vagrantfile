@@ -28,18 +28,13 @@ Vagrant.configure("2") do |config|
     # Synced Folder
     config.vm.synced_folder vdd_config["synced_folder"]["host_path"],
       vdd_config["synced_folder"]["guest_path"],
-      :nfs => vdd_config["synced_folder"]["use_nfs"]
+      :nfs => vdd_config["synced_folder"]["use_nfs"],
+      :owner => "www-data",
+      :group => "vagrant"
 
-    # Files folder
-    # Files folder
-    vdd_config["sites"].each do |index, site|
-      @host  = "#{vdd_config["synced_folder"]["host_path"]}/#{index}/#{site['files']}"
-      @guest = "#{vdd_config["synced_folder"]["guest_path"]}/#{index}/#{site['files']}"
-      config.vm.synced_folder @host, @guest, :owner => "www-data", :group => "vagrant"
-    end
-
-    # This is for vassh and vasshin to work properly
-    config.vm.synced_folder "www/", "/var/www/"
+    # This is for vassh and vasshin to work properly (let this line commented)
+    # https://github.com/x-team/vassh/
+    # config.vm.synced_folder "www/", "/var/www/"
 
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]

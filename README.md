@@ -54,42 +54,31 @@ your environment.
 
   1. Install vagrant host updater plugin
      `$ vagrant plugin install vagrant-hostsupdater`
-
-  1. Prepare Vagrant box
-     Boxes are the skeleton from which Vagrant machines are constructed.
-     They are portable files which can be used by others on any platform that
-     runs Vagrant to bring up a working environment.
-
-     Run next command to download and prepare Ubuntu 12 box:
-     `$ vagrant box add precise32 http://files.vagrantup.com/precise32.box`
-
-
+  
   1. Prepare VDD source code
-     Download and unpack VDD source code and place it inside your home
-     directory.
+     Download and unpack VDD source code and place it inside your local development folder.
+     `git clone CLONE_URL_OF_THIS_REPO`
 
   1. Adjust configuration | Copy `config.example.json` to `config.json`
      You can edit `config.json` file to adjust your settings. If you use VDD first
      time it's recommended to leave the original config as is.
 
-  1. Build your environment
+  1. Build your environment (Note : You might want to add your project before doing this step)
      To build your environment execute next command inside your VDD copy:
-     `$ vagrant up`
+     `$ vagrant up --provision`
 
      Vagrant will start to build your environment. You'll see green status
      messages while Chef is configuring the system.
 
-  1. Visit `192.168.44.44` address
-     If you didn't change default IP address in `config.json` file you'll see
+  1. Visit `192.168.44.44` address OR the hostname specified in the config.json
+     If you didn't change the default IP address in `config.json` file you'll see
      VDD's main page. Main page has links to configured sites, development tools
      and list of frequently asked questions. Follow instruction on how to quickly install Drupal
 
   1. Configure Drupal Code sniffer with Coder module inside bin directory 
      Reference : https://drupal.org/node/1419988
 
-Now you have ready to use virtual development server. By default 1 site
-(similar to virtual hosts) is configured: Drupal 7. You always can
-add new ones in `config.json` file.
+It's now time to add your default project inside the `www` folder.
 
 Basic Usage
 ===========

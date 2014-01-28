@@ -29,7 +29,7 @@
     "recipe[vdd::curl]",
     "recipe[vdd::vim]",
     "recipe[vdd::vdd_help]",
-    "recipe[vdd::create_symlink]"
+    "recipe[vdd::install_coder]"
   ],
   "description": "VDD Apache, PHP, MySQL plus other tools configuration.",
   "chef_type": "role"

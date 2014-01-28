@@ -37,9 +37,11 @@ Vagrant.configure("2") do |config|
       :group => "vagrant"
     end
 
-    # This is for vassh and vasshin to work properly (let this line commented)
-    # https://github.com/x-team/vassh/
-    # config.vm.synced_folder "www/", "/var/www/"
+=begin
+ This is for vassh and vasshin to work properly (let this line commented and indented the way it is)
+ https://github.com/x-team/vassh/
+ config.vm.synced_folder "www/", "/var/www/"
+=end
 
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]

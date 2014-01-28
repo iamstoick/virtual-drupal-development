@@ -19,6 +19,7 @@
     "recipe[vdd::vdd_sites]",
     "recipe[vdd::php]",
     "recipe[vdd::drush]",
+    "recipe[vdd::PHP_CodeSniffer]",
     "recipe[vdd::phpmyadmin]",
     "recipe[vdd::mysql]",
     "recipe[vdd::xdebug]",
@@ -27,7 +28,8 @@
     "recipe[vdd::rsync]",
     "recipe[vdd::curl]",
     "recipe[vdd::vim]",
-    "recipe[vdd::vdd_help]"
+    "recipe[vdd::vdd_help]",
+    "recipe[vdd::install_coder]"
   ],
   "description": "VDD Apache, PHP, MySQL plus other tools configuration.",
   "chef_type": "role"

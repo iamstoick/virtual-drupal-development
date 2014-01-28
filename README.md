@@ -52,9 +52,9 @@ your environment.
   1. Install Vagrant
      http://docs.vagrantup.com/v2/installation/index.html
 
-  1. Install vagrant host updater plugin
+  1. Install vagrant host updater plugin. Please note on this one that "plugin" is not available in some lower version       of Vagrant. The solution so far is to upgrade to higher versions.
      `$ vagrant plugin install vagrant-hostsupdater`
-  
+
   1. Prepare VDD source code
      Download and unpack VDD source code and place it inside your local development folder.
      `git clone CLONE_URL_OF_THIS_REPO`
@@ -70,12 +70,29 @@ your environment.
      Vagrant will start to build your environment. You'll see green status
      messages while Chef is configuring the system.
 
+     If during `vagrant up` you encountered the below message, that means you don't have NFS. Also, take note that if        you're on Windows, NFS isn't supported.
+
+     `Bringing machine 'default' up with 'virtualbox' provider...`
+     `There are errors in the configuration of this machine. Please fix`
+     `the following errors and try again:`
+
+     `vm:`
+     `* It appears your machine doesn't support NFS, or there is not an`
+     `adapter to enable NFS on this machine for Vagrant. Please verify`
+     `that 'nfsd' is installed on your machine, and try again. If you're`
+     `on Windows, NFS isn't supported. If the problem persists, please`
+     `contact Vagrant support.`
+
+     In Debian/Ubuntu, you can install the required package using this command.
+
+     `$ sudo apt-get install nfs-common nfs-kernel-server`
+
   1. Visit `192.168.44.44` address OR the hostname specified in the config.json
      If you didn't change the default IP address in `config.json` file you'll see
      VDD's main page. Main page has links to configured sites, development tools
      and list of frequently asked questions. Follow instruction on how to quickly install Drupal
 
-  1. Configure Drupal Code sniffer with Coder module inside bin directory 
+  1. Configure Drupal Code sniffer with Coder module inside bin directory
      Reference : https://drupal.org/node/1419988
 
 It's now time to add your default project inside the `www` folder.
@@ -145,9 +162,9 @@ config.json description
 `config.json` is the main configuration file. Data from `config.json` is used to
 configure virtual machine. After editing file make sure that your JSON syntax is
 valid. http://jsonlint.com/ can help to check it.
-  
+
   * `hostname (string, required)`
-    _URL of the machine automatically added to the /etc/hosts if you have vagrant 
+    _URL of the machine automatically added to the /etc/hosts if you have vagrant
     host updater plugin (vagrant plugin install vagrant-hostsupdater)_
 
   * `ip (string, required)`

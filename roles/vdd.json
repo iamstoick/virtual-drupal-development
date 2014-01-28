@@ -19,6 +19,7 @@
     "recipe[vdd::vdd_sites]",
     "recipe[vdd::php]",
     "recipe[vdd::drush]",
+    "recipe[vdd::PHP_CodeSniffer]",
     "recipe[vdd::phpmyadmin]",
     "recipe[vdd::mysql]",
     "recipe[vdd::xdebug]",

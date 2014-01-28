@@ -2,7 +2,7 @@ file "/var/www/index.html" do
   action :delete
 end
 
-link "/home/vagrant/sites" do
+link "/home/vagrant/www" do
   to "/var/www"
 end
 

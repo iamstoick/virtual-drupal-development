@@ -137,17 +137,18 @@ http://docs.vagrantup.com/v2/
 Drush Integration
 =================
 
-If your `Host` machine has Drush already you can use it to manage your VDD environment. All you need to do is create a file called `vdd.aliases.drushrc.php` in `~/.drush` in your host machine. Your file should contain the below script.
+If your `Host` machine has Drush already you can use it to manage your VDD environment. All you need to do is create a file called `vdd.aliases.drushrc.php` in `~/.drush` in your host machine. The file should contain the below script.
 
-`<?php`
-`$aliases['vdd'] = array(`
-`  'parent' => '@parent',`
-`  'site' => 'vdd',`
-`  'env' => 'local',`
-`  'uri' => 'vdd/drupal7',`
-`  'root' => '/var/www/drupal7/',`
-`  'remote-host' => '192.168.44.44',`
-`  'remote-user' => 'vagrant',`
+
+`<?php`<br>
+`$aliases['vdd'] = array(`<br>
+`  'parent' => '@parent',`<br>
+`  'site' => 'vdd',`<br>
+`  'env' => 'local',`<br>
+`  'uri' => 'vdd/drupal7',`<br>
+`  'root' => '/var/www/drupal7/',`<br>
+`  'remote-host' => '192.168.44.44',`<br>
+`  'remote-user' => 'vagrant',`<br>
 `);`
 
 
@@ -157,10 +158,10 @@ To be able to execute Drush commands against VDD, while on your host machine:
 
 Examples:
 
-`$ drush @vdd cc all`
-`$ drush @vdd en views -y`
-`$ drush @vdd vset preprocess_css 1 -y`
-`$ drush @vdd status`
+`$ drush @vdd cc all`<br>
+`$ drush @vdd en views -y`<br>
+`$ drush @vdd vset preprocess_css 1 -y`<br>
+`$ drush @vdd status`<br>
 
 
 Customizations

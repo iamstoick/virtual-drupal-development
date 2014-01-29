@@ -72,16 +72,18 @@ your environment.
 
      If during `vagrant up` you encountered the below message, that means you don't have NFS. Also, take note that if        you're on Windows, NFS isn't supported.
 
-     `Bringing machine 'default' up with 'virtualbox' provider...`
-     `There are errors in the configuration of this machine. Please fix`
-     `the following errors and try again:`
+     ```
+     Bringing machine 'default' up with 'virtualbox' provider...
+     There are errors in the configuration of this machine. Please fix
+     the following errors and try again:
 
-     `vm:`
-     `* It appears your machine doesn't support NFS, or there is not an`
-     `adapter to enable NFS on this machine for Vagrant. Please verify`
-     `that 'nfsd' is installed on your machine, and try again. If you're`
-     `on Windows, NFS isn't supported. If the problem persists, please`
-     `contact Vagrant support.`
+     vm:
+     * It appears your machine doesn't support NFS, or there is not an
+     adapter to enable NFS on this machine for Vagrant. Please verify
+     that 'nfsd' is installed on your machine, and try again. If you're
+     on Windows, NFS isn't supported. If the problem persists, please
+     contact Vagrant support.
+     ```
 
      In Debian/Ubuntu, you can install the required package using this command.
 

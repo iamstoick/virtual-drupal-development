@@ -165,6 +165,8 @@ Examples:
 `$ drush @vdd vset preprocess_css 1 -y`<br>
 `$ drush @vdd status`<br>
 
+Also make sure that you uploaded the host public key on Vagrant.
+
 
 Customizations
 ==============

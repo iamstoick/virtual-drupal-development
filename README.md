@@ -141,18 +141,18 @@ Drush Integration
 
 If your `Host` machine has Drush already you can use it to manage your VDD environment. All you need to do is create a file called `vdd.aliases.drushrc.php` in `~/.drush` in your host machine. The file should contain the below script.
 
-
-`<?php`<br>
-`$aliases['vdd'] = array(`<br>
-`  'parent' => '@parent',`<br>
-`  'site' => 'vdd',`<br>
-`  'env' => 'local',`<br>
-`  'uri' => 'vdd/drupal7',`<br>
-`  'root' => '/var/www/drupal7/',`<br>
-`  'remote-host' => '192.168.44.44',`<br>
-`  'remote-user' => 'vagrant',`<br>
-`);`
-
+```
+<?php
+$aliases['vdd'] = array(
+  'parent' => '@parent',
+  'site' => 'vdd',
+  'env' => 'local',
+  'uri' => 'vdd/drupal7',
+  'root' => '/var/www/drupal7/',
+  'remote-host' => '192.168.44.44',
+  'remote-user' => 'vagrant',
+);
+```
 
 To be able to execute Drush commands against VDD, while on your host machine:
 

@@ -134,6 +134,35 @@ Vagrant's basic commands (should be executed inside VDD directory):
 Official Vagrant site has beautiful documentation.
 http://docs.vagrantup.com/v2/
 
+Drush Integration
+=================
+
+If your `Host` machine has Drush already you can use it to manage your VDD environment. All you need to do is create a file called `vdd.aliases.drushrc.php` in `~/.drush` in your host machine. Your file should contain the below script.
+
+`<?php`
+`$aliases['vdd'] = array(`
+`  'parent' => '@parent',`
+`  'site' => 'vdd',`
+`  'env' => 'local',`
+`  'uri' => 'vdd/drupal7',`
+`  'root' => '/var/www/drupal7/',`
+`  'remote-host' => '192.168.44.44',`
+`  'remote-user' => 'vagrant',`
+`);`
+
+
+To be able to execute Drush commands against VDD, while on your host machine:
+
+`$ drush @vdd [DRUSH_COMMAND]`
+
+Examples:
+
+`$ drush @vdd cc all`
+`$ drush @vdd en views -y`
+`$ drush @vdd vset preprocess_css 1 -y`
+`$ drush @vdd status`
+
+
 Customizations
 ==============
 

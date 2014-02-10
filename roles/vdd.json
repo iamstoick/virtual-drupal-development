@@ -24,6 +24,7 @@
     "recipe[vdd::mysql]",
     "recipe[vdd::xdebug]",
     "recipe[vdd::git]",
+    "recipe[vdd::graphviz]",
     "recipe[vdd::mc]",
     "recipe[vdd::rsync]",
     "recipe[vdd::curl]",

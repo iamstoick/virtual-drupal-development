@@ -14,6 +14,9 @@ Vagrant.configure("2") do |config|
   config.vm.box = "precise32"
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
+  # To be ale to use this snippet you must have "vagrant-cachier" installed.
+  # Please refer to the doc about installing Vagrant plugin.
+  # https://docs.vagrantup.com/v2/plugins/usage.html
   if Vagrant.has_plugin?("vagrant-cachier")
     # Configure cached packages to be shared between instances of the same base box.
     # More info on http://fgrehm.viewdocs.io/vagrant-cachier/usage
